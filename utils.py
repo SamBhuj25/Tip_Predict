@@ -4,7 +4,6 @@ import json
 import numpy as np
 import warnings
 warnings.filterwarnings("ignore")
-import config
 
 class Tips_Pred():
     
@@ -17,10 +16,10 @@ class Tips_Pred():
         self.day = "day_" + day
         
     def load_data(self):
-        with open(config.MODEL_FILE_PATH,"rb") as k:
+        with open("model.pkl","rb") as k:
             self.model = pickle.load(k)
         
-        with open(config.JSON_FILE_PATH,"r") as l:
+        with open("proj_data.json","r") as l:
             self.json_data = json.load(l)
 
         
@@ -37,11 +36,10 @@ class Tips_Pred():
         test_array[0][3] = self.json_data["time"][self.time]
         test_array[0][4] = self.size
         test_array[0,day_index] = 1
-        print(test_array)
         
         pred_tip = self.model.predict(test_array)    
         return pred_tip[0]
     
-obj = Tips_Pred(500,"Male","Yes","Lunch",5,"Sun")
-obj.pred_tips()
+# obj = Tips_Pred(500,"Male","Yes","Lunch",5,"Sun")
+# obj.pred_tips()
     
