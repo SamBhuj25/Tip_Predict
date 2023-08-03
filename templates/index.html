@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Prediction</title>
+</head>
+      
+<body style="background-image: url('https://www.irishtimes.com/resizer/Cel5NXu85HdPNL5XrAx7XrOv9L8=/1600x0/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/irishtimes/SYKCCZ5W2DLV4ZLU4SOCYIHEWI.jpg');">
+    
+
+    <h1> How Much Tip Costomer will Give </h1>
+    <h1> ****************************** </h1>
+    <form method="GET" action="/predict_tip">
+
+        <label><b>TOTAL BILL AMT_ :</b></label>
+        <input type = "text" name = "total_bill">
+        <h4><strong><span style="color: red;"> {{B}} </span></strong></h4>
+
+        
+        <label><b>GENDER__ :</b></label>
+        <select name = "gender">
+            <option value = "Male">MALE</option>
+            <option value = "Female">FEMALE___</option>
+        </select>
+        <br>
+        <br>
+        <label>Who Will Pay The Bill ^^ </label>
+
+        <br>
+        <br>
+        <label><b>THE_TIME_ :</b></label>
+        <select name = "time">
+            <option value = "Dinner">DINNER</option>
+            <option value = "Lunch">LUNCH______</option>
+        </select> 
+
+        <br>
+        <br>
+        
+        <label><b>NO OF PERSONS_ :</b></label>
+        <input type = "text" name = "total_persons">
+        <h4><strong><span style="color: red;"> {{A}} </span></strong></h4>
+
+        <label><b><h3>SMOKER_ :</b></h3></label>
+        <label>YES  : </label> <input type = "radio" name= "smoker" value = "Yes">
+        <label>NO  : </label> <input type = "radio" name= "smoker" value = "No">
+
+        <br>
+        <br>
+
+        <label><b>DAY_ : </b></label>
+        <select name = "day">
+            <option value = "Sun">SUNDAY</option>
+            <option value = "Fri">FRIDAY</option>
+            <option value = "Sat">SATURDAY</option>
+            <option value = "Thur">THURSDAY__</option>
+        </select>
+
+        <br>
+        <br>
+
+        <h2><input type = "submit"  value="PREDICT__"></h2>
+
+        <br>
+
+        <h2><strong>This Costomer Will give Approximately <b><u> {{ result }} </u> Rs. Tip</b> </strong></h2>
+        <h2><strong><span style="color: red;"> {{F}} </span></strong></h2>
+        <h1> *************** </h1>
+
+    </form>
+
+
+</body>
+</html>
